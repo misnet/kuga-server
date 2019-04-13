@@ -1,0 +1,6 @@
+{
+  "appKey" : "",
+  "appSecret" : "",
+  "regionId" : "cn-hangzhou",
+  "triggerEmail":"noreply@m.test.com"
+}
