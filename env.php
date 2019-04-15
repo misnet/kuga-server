@@ -3,7 +3,7 @@
  * 运行环境相关设置
  * @author Donny
  */
-include_once 'class/vendor.old/autoload.php';
+include_once 'class/vendor/autoload.php';
 define('DS',DIRECTORY_SEPARATOR);
 define('QING_ROOT_PATH', realpath(__DIR__));
 define('QING_PUBLIC_PATH',QING_ROOT_PATH.DS.'public');
