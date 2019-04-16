@@ -3,7 +3,7 @@
     "name":"角色下的用户列表",
     "description":"获取指定角色的用户列表",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"acc.listRoleUser",
+    "method":"Acc.listRoleUser",
     "accessLevel": 1,
     "request":[
         {

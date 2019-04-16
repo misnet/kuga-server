@@ -3,7 +3,7 @@
   "name":"个人资料修改",
   "description":"用户自行修改资料",
   "namespace":"Kuga\\Api\\Acc",
-  "method":"user.updateProfile",
+  "method":"User.updateProfile",
   "accessLevel": 1,
   "request":[
     {

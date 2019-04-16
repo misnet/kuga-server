@@ -3,7 +3,7 @@
     "name":"取消角色分配用户",
     "description":"指定角色，取消分配指定的用户",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"acc.unassignRoleToUsers",
+    "method":"Acc.unassignRoleToUsers",
     "accessLevel": 1,
     "request":[
         {

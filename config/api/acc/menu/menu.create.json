@@ -3,7 +3,7 @@
     "name":"创建菜单",
     "description":"创建菜单",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"menu.createMenu",
+    "method":"Menu.createMenu",
     "accessLevel": 1,
     "request":[
         {

@@ -3,7 +3,7 @@
     "name":"角色分配用户",
     "description":"指定角色，分配给指定的用户",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"acc.assignRoleToUsers",
+    "method":"Acc.assignRoleToUsers",
     "accessLevel": 1,
     "request":[
         {

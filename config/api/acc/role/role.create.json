@@ -3,7 +3,7 @@
     "name":"创建角色",
     "description":"创建角色",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"acc.createRole",
+    "method":"Acc.createRole",
     "accessLevel": 1,
     "request":[
         {
