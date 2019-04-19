@@ -17,15 +17,27 @@
     "require": {
         "php": ">=7.0",
         "anchnet/aliyun-openapi-php-sdk":"dev-master",
-        "kuga/openapi-core":"0.9.0",
-        "kuga/qing": ">=0.8.7",
-        "kuga/acc-api": ">=0.9.0",
+        "kuga/openapi-core":"dev-master",
+        "kuga/qing": "dev-master",
+        "kuga/acc-api": "dev-master",
         "alibabacloud/client":">=1.0.7"
     },
     "repositories": {
         "packagist": {
             "type": "composer",
             "url": "https://packagist.phpcomposer.com"
+        },
+        "acc-api": {
+            "type": "vcs",
+            "url": "https://github.com/misnet/acc-api.git"
+        },
+        "openapi-core": {
+            "type": "vcs",
+            "url": "https://github.com/misnet/kuga-openapi-core.git"
+        },
+        "qing": {
+            "type": "vcs",
+            "url": "https://github.com/misnet/qing.git"
         }
     }
 }
