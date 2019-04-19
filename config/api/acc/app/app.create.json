@@ -3,7 +3,7 @@
     "name":"创建应用",
     "description":"创建应用",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"app.create",
+    "method":"App.create",
     "accessLevel": 1,
     "request":[
         {

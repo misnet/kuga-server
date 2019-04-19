@@ -3,7 +3,7 @@
     "name":"列出权限操作",
     "description":"根据角色id和资源编码列出权限操作",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"acc.listOperationList",
+    "method":"Acc.listOperationList",
     "accessLevel": 1,
     "request":[
         {

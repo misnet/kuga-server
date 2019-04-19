@@ -3,7 +3,7 @@
     "name":"更新应用",
     "description":"更新应用",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"app.update",
+    "method":"App.update",
     "accessLevel": 1,
     "request":[
         {

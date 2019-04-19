@@ -79,4 +79,10 @@ $_CONFIG['testmodel'] = true;
 
 //调试模式，非预见性错误或程序错误时，api会显示debug信息
 $_CONFIG['debug']     = true;
+
+$_CONFIG['app']['acc'] = [
+    'apiUri'=>'https://acc.api.depoga.com/v3/gateway',
+    'appKey' =>1000,
+    'appSecret'=>'IsuZLMPJDVnwYp8XYp/Pf4HH6e5PY28c8oQy8akF5vWxMjvvSNORdPvDu6HK9eOAGcVmDk1jLRYIkAcGu7tgUQ=='
+];
 return $_CONFIG;
