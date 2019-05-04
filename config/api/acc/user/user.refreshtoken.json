@@ -1,7 +1,7 @@
 {
   "id":"acc.user.refresh.token",
   "name":"刷新accessToken",
-  "description":"刷新accessToken，请在accessToken过期之前，用本接口刷新一下accessToken",
+  "description":"刷新accessToken，客户端如检测到accessToken过期，系统返回的status为99004时，请用本接口刷新一下accessToken",
   "namespace":"Kuga\\Api\\Acc",
   "method":"User.refreshAccessToken",
   "accessLevel": 0,
