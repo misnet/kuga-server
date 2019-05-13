@@ -1,9 +1,9 @@
 {
-    "id":"acc.user.list",
-    "name":"获取用户列表",
-    "description":"后台用户账号列表",
+    "id":"acc.user.list.byuids",
+    "name":"指定用户列表",
+    "description":"根据指定的用户ID，获取后台用户账号列表",
     "namespace":"Kuga\\Api\\Acc",
-    "method":"User.userList",
+    "method":"User.userListByIds",
     "accessLevel": 1,
     "request":[
         {
@@ -29,10 +29,10 @@
             "description":"指定应用ID，未指定时，以当前appKey为准"
         },
         {
-            "param":"q",
-            "required":false,
-            "type":"String",
-            "description":"关键词，可以是用户名、姓名、手机、Email"
+            "param":"uids",
+            "required":true,
+            "type":"Array",
+            "description":"用户ID列表，例：[1000,1001]"
         }
     ],
     "response":{
