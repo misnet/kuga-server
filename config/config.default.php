@@ -24,12 +24,6 @@ $_CONFIG['weixin'] = array(
 $_CONFIG['system']['charset']       = 'utf-8';
 $_CONFIG['system']['locale']       = 'zh_CN';
 
-//redis配置
-$_CONFIG['redis']['host'] = 'localhost';
-$_CONFIG['redis']['port'] = '6379';
-$_CONFIG['redis']['password'] = '';
-$_CONFIG['redis']['db'] = 0;
-$_CONFIG['redis']['statsKey']  = 'KG';
 
 //用的队列程序
 $_CONFIG['queue']['adapter'] = 'redis';
@@ -38,12 +32,12 @@ $_CONFIG['queue']['adapter'] = 'redis';
 $_CONFIG['acc'] = CONFIG_DIR.'/acc.xml';
 
 
-$cache['cache']['slow']['engine'] = 'file';
-$cache['slow']['option']['cacheDir'] = '/tmp';
-$cache['slow']['option']['lifetime'] = 86400;
-$cache['fast']['engine'] = 'redis';
-$cache['fast']['option'] = $_CONFIG['redis'];
-$_CONFIG['cache'] = $cache;
+//$cache['cache']['slow']['engine'] = 'file';
+//$cache['slow']['option']['cacheDir'] = '/tmp';
+//$cache['slow']['option']['lifetime'] = 86400;
+//$cache['fast']['engine'] = 'redis';
+//$cache['fast']['option'] = $_CONFIG['redis'];
+//$_CONFIG['cache'] = $cache;
 
 //API KEY配置文件
 $_CONFIG['apiKeys'] = CONFIG_DIR.'/apikeys.config.json';
@@ -68,7 +62,8 @@ $_CONFIG['sms']['aliyun']   = CONFIG_DIR.'/sms/aliyun.config.json';
 $_CONFIG['email']  = CONFIG_DIR.'/aliemail.config.json';
 //session配置
 $_CONFIG['session']= CONFIG_DIR.'/session.config.json';
-
+//cache配置文件
+$_CONFIG['cache'] = CONFIG_DIR.'/cache.json';
 //多域名配置
 //当访问a.xxx.com和访问api.xxx.com一样效果
 //$_CONFIG['domainMapping'] = [
