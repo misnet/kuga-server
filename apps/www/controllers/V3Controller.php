@@ -8,9 +8,18 @@
 namespace Qing\Api\Controllers;
 use Kuga\Core\Api\ApiService;
 use Kuga\Core\Api\Request as KugaRequest;
+use Kuga\Core\GlobalVar;
+use Kuga\Core\Service\ApiAccessLogService;
 use Kuga\Module\Acc\Model\AppModel;
 
 class V3Controller extends ControllerBase{
+    /**
+     * 清掉所有API日志
+     */
+    public function clearApiLogAction(){
+        $logService = new ApiAccessLogService($this->getDI());
+        $logService->flush();
+    }
     /**
      * 刷新app list 缓存
      * @return bool
@@ -54,7 +63,6 @@ class V3Controller extends ControllerBase{
         $this->getDI()->getShared('translator')->setLocale(LC_MESSAGES, $locale,$this->config->system->charset);
         $requestObject = new KugaRequest($requestData);
         $requestObject->setOrigRequest($this->request);
-
         ApiService::setDi($this->getDI());
         ApiService::initApiJsonConfigFile(QING_ROOT_PATH.'/config/api/api.json');
         $result = ApiService::response($requestObject);
