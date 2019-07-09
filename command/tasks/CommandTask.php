@@ -73,14 +73,15 @@ class CommandTask extends Task{
         $total   = $service->count();
         $totalPage = ceil($total / 100);
         set_time_limit(0);
-//        $yestoday = strtotime('-1 day');
-        $yestoday = time();
+        $yestoday = strtotime('-1 day');
+//        $yestoday = time();
         $yestoday = strtotime(date('Y-m-d 23:59:59',$yestoday));
         $ids = [];
         for($i=1;$i<=$totalPage;$i++){
             $list    = $service->getList($i,100,0,$yestoday,false);
             if($list){
                 foreach($list as $item){
+
                     $exist = ApiLogModel::count(['redisId=?1','bind'=>[1=>$item['id']]]);
                     if(!$exist){
                         $row = new ApiLogModel();
