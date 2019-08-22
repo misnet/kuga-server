@@ -71,14 +71,14 @@ class CommandTask extends Task{
     public  function archiveApiLogAction(){
         $service = new \Kuga\Core\Service\ApiAccessLogService($this->getDI());
         $total   = $service->count();
-        $totalPage = ceil($total / 100);
+        $totalPage = ceil($total / 1000);
         set_time_limit(0);
         $yestoday = strtotime('-1 day');
 //        $yestoday = time();
         $yestoday = strtotime(date('Y-m-d 23:59:59',$yestoday));
         $ids = [];
         for($i=1;$i<=$totalPage;$i++){
-            $list    = $service->getList($i,100,0,$yestoday,false);
+            $list    = $service->getList($i,1000,0,$yestoday,false);
             if($list){
                 foreach($list as $item){
 
