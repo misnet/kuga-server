@@ -74,8 +74,8 @@ class CommandTask extends Task{
         $totalPage = ceil($total / 1000);
         set_time_limit(0);
         $yestoday = strtotime('-1 day');
-//        $yestoday = time();
-        $yestoday = strtotime(date('Y-m-d 23:59:59',$yestoday));
+        $yestoday = time();
+        //$yestoday = strtotime(date('Y-m-d 23:59:59',$yestoday));
         $ids = [];
         for($i=1;$i<=$totalPage;$i++){
             $list    = $service->getList($i,1000,0,$yestoday,false);
