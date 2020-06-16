@@ -59,6 +59,7 @@ $_CONFIG['sms']['aliyun']   = CONFIG_DIR.'/sms/aliyun.config.json';
 $_CONFIG['email']  = CONFIG_DIR.'/aliemail.config.json';
 //session配置
 $_CONFIG['session']= CONFIG_DIR.'/session.config.json';
+
 //jwt secret key
 $_CONFIG['jwtTokenSecret'] = 'jwt token secret';
 
@@ -67,6 +68,7 @@ $_CONFIG['apiLogEnabled'] = false;
 
 //accessToken中用户标识的键值
 $_CONFIG['accessTokenUserIdKey'] = 'uid';
+
 //多域名配置
 //当访问a.xxx.com和访问api.xxx.com一样效果
 //$_CONFIG['domainMapping'] = [

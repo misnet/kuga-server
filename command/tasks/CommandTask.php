@@ -1,5 +1,8 @@
 <?php
+
+use Kuga\Service\ApiAccessLogService;
 use \Phalcon\Cli\Task;
+use \Kuga\Core\Model\ApiLogModel;
 class CommandTask extends Task{
     /**
      * 任务最多执行1小时
@@ -22,7 +25,7 @@ class CommandTask extends Task{
 
 
     private $swooleHost = '127.0.0.1';
-    private $swoolePort = 9502;
+    private $swoolePort = 9510;
     private $serv;
     private $curl;
     /**
@@ -61,6 +64,49 @@ class CommandTask extends Task{
             }
         }
     }
+
+    /**
+     * 归档日志
+     */
+    public  function archiveApiLogAction(){
+        $service = new \Kuga\Core\Service\ApiAccessLogService($this->getDI());
+        $total   = $service->count();
+        $totalPage = ceil($total / 1000);
+        set_time_limit(0);
+        $yestoday = strtotime('-1 day');
+        $yestoday = time();
+        //$yestoday = strtotime(date('Y-m-d 23:59:59',$yestoday));
+        $ids = [];
+        for($i=1;$i<=$totalPage;$i++){
+            $list    = $service->getList($i,1000,0,$yestoday,false);
+            if($list){
+                foreach($list as $item){
+
+                    $exist = ApiLogModel::count(['redisId=?1','bind'=>[1=>$item['id']]]);
+                    if(!$exist){
+                        $row = new ApiLogModel();
+                        $row->mid = isset($item['memberId'])?$item['memberId']:0;
+                        $row->responseTime = isset($item['responseTime'])?$item['responseTime']:0;
+                        $row->requestTime  = $item['createTime'];
+                        $row->userIp       = $item['ip'];
+                        $row->params       = json_encode($item['params']);
+                        $row->result       = isset($item['result'])?json_encode($item['result']):null;
+                        $row->method       = $item['method'];
+                        $row->redisId      = $item['id'];
+                        $row->duration     = $item['duration']*1000;
+                        $result = $row->create();
+                        if(!$result){
+                            echo $row->getMessages()[0]->getMessage()."\n";
+                        }
+                    }
+                    $ids[] = $item['id'];
+                }
+            }
+        }
+        if(sizeof($ids)){
+            $service->removeByIds($ids);
+        }
+    }
     public function serverAction(){
         $this->serv = new \Swoole\Server($this->swooleHost, $this->swoolePort);
         $this->serv->set(array(
@@ -87,13 +133,14 @@ class CommandTask extends Task{
         });
         $this->serv->on('task',function($serv,$taskId,$fromId,$data){
             echo "TaskID:".$taskId.' from worker '.$fromId."\n";
-            echo $data."\n";
             $result ='No Action';
-            $cat  = json_decode($data,true);
-            if(!empty($cat)){
-
-                $this->fetchDesign($cat['id']);
-                return 'Catagory '.$cat['id'].'   '.$cat['name'].' finished';
+            $command  = json_decode($data,true);
+            if(!empty($command)){
+                switch($command['action']){
+                    case 'archiveApiLog':
+                        $this->archiveApiLog();
+                        break;
+                }
             }else{
                 return '客户端传参错误';
             }

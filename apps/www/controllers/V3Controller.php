@@ -7,11 +7,20 @@
  */
 namespace Qing\Api\Controllers;
 use Kuga\Core\Api\ApiService;
+
 use Kuga\Core\Api\Request\BaseRequest as KugaRequest;
+
 use Kuga\Core\Service\ApiAccessLogService;
 use Kuga\Module\Acc\Model\AppModel;
 
 class V3Controller extends ControllerBase{
+    /**
+     * 清掉所有API日志
+     */
+    public function clearApiLogAction(){
+        $logService = new ApiAccessLogService($this->getDI());
+        $logService->flush();
+    }
     /**
      * 刷新app list 缓存
      * @return bool
