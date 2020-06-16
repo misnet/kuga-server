@@ -1,17 +1,15 @@
 <?php
 /**
- * Created by PhpStorm.
  * User: donny
- * Date: 2017/11/20
- * Time: 下午3:42
+ * Date: 2020/6/10
+ * Time: 下午2:11
  */
 namespace Qing\Api\Controllers;
 use Kuga\Core\Api\ApiService;
-use Kuga\Core\Api\Request\BaseRequest as KugaRequest;
-use Kuga\Core\Service\ApiAccessLogService;
+use Kuga\Core\Api\Request\JwtRequest as KugaRequest;
 use Kuga\Module\Acc\Model\AppModel;
 
-class V3Controller extends ControllerBase{
+class V4Controller extends ControllerBase{
     /**
      * 刷新app list 缓存
      * @return bool
@@ -22,15 +20,8 @@ class V3Controller extends ControllerBase{
         return false;
     }
     /**
-     * 清掉所有API日志
-     */
-    public function clearApiLogAction(){
-        $logService = new ApiAccessLogService($this->getDI());
-        $logService->flush();
-    }
-    /**
      * API服务网关地址，这种书写方式有利于nginx的rewrite分发
-     * http://api.xxx.com/v3/gateway/console.user.login
+     * http://api.xxx.com/v4/gateway/console.user.login
      * @param string $method
      */
     public function gatewayAction($method=''){
@@ -52,11 +43,9 @@ class V3Controller extends ControllerBase{
             //post 表单格式时
             $requestData = $this->request->getPost();
         }
-
-        if(!$method && $requestData['method']){
-            $method = $requestData['method'];
-        }
-        $locale = $this->request->get('locale','string','zh_CN');
+        $headers = $this->request->getHeaders();
+        //$locale = $this->request->get('locale','string','zh_CN');
+        $locale = isset($headers['locale'])?$headers['locale']:'zh_CN';
         if($locale=='zh'){
             $locale='zh_CN';
         }
@@ -64,6 +53,8 @@ class V3Controller extends ControllerBase{
         $requestObject = new KugaRequest($requestData);
         $requestObject->setOrigRequest($this->request);
         $requestObject->setMethod($method);
+        $requestObject->setHeaders($headers);
+        $requestObject->setDI($this->getDI());
         ApiService::setDi($this->getDI());
         ApiService::initApiJsonConfigFile(QING_ROOT_PATH.'/config/api/api.json');
         $result = ApiService::response($requestObject);

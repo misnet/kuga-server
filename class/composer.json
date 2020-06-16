@@ -25,15 +25,15 @@
     "repositories": {
         "packagist": {
             "type": "composer",
-            "url": "https://packagist.phpcomposer.com"
+            "url": "https://mirrors.aliyun.com/composer/"
         },
         "acc-api": {
             "type": "vcs",
             "url": "https://github.com/misnet/acc-api.git"
         },
         "openapi-core": {
-            "type": "vcs",
-            "url": "https://github.com/misnet/kuga-openapi-core.git"
+            "type": "path",
+            "url": "../../kuga-openapi-core"
         },
         "qing": {
             "type": "vcs",
