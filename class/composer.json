@@ -35,10 +35,6 @@
             "url":"https://packagist.mirrors.sjtug.sjtu.edu.cn"
         },
         {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
-        }
-        {
             "type": "vcs",
             "url": "http://git.sdut.me/misnet/kuga-openapi-core"
         },

@@ -12,7 +12,8 @@ $_CONFIG['dbwrite'] = array(
     'host'=>'localhost',
     'username'=>'root',
     'password'=>'',
-    'dbname'=>''
+    'dbname'=>'',
+    'charset'=>'utf8mb4',
 );
 $_CONFIG['dbread'] = $_CONFIG['dbwrite'];
 $_CONFIG['weixin'] = array(
@@ -24,6 +25,8 @@ $_CONFIG['weixin'] = array(
 $_CONFIG['system']['charset']       = 'utf-8';
 $_CONFIG['system']['locale']       = 'zh_CN';
 
+//cache配置文件
+$_CONFIG['cache'] = CONFIG_DIR.'/cache.json';
 
 //用的队列程序
 $_CONFIG['queue']['adapter'] = 'redis';
@@ -32,15 +35,9 @@ $_CONFIG['queue']['adapter'] = 'redis';
 $_CONFIG['acc'] = CONFIG_DIR.'/acc.xml';
 
 
-//$cache['cache']['slow']['engine'] = 'file';
-//$cache['slow']['option']['cacheDir'] = '/tmp';
-//$cache['slow']['option']['lifetime'] = 86400;
-//$cache['fast']['engine'] = 'redis';
-//$cache['fast']['option'] = $_CONFIG['redis'];
-//$_CONFIG['cache'] = $cache;
 
 //API KEY配置文件
-$_CONFIG['apiKeys'] = CONFIG_DIR.'/apikeys.config.json';
+//$_CONFIG['apiKeys'] = CONFIG_DIR.'/apikeys.config.json';
 
 //文件存储配置，具体用哪一个在env.php中
 $_CONFIG['fileStorage']['adapter'] = 'aliyun'; //值为aliyun或localfile
@@ -63,8 +60,16 @@ $_CONFIG['sms']['aliyun']   = CONFIG_DIR.'/sms/aliyun.config.json';
 $_CONFIG['email']  = CONFIG_DIR.'/aliemail.config.json';
 //session配置
 $_CONFIG['session']= CONFIG_DIR.'/session.config.json';
-//cache配置文件
-$_CONFIG['cache'] = CONFIG_DIR.'/cache.json';
+
+//jwt secret key
+$_CONFIG['jwtTokenSecret'] = 'jwt token secret';
+
+//是否开启记录API访问日志
+$_CONFIG['apiLogEnabled'] = false;
+
+//accessToken中用户标识的键值
+$_CONFIG['accessTokenUserIdKey'] = 'uid';
+
 //多域名配置
 //当访问a.xxx.com和访问api.xxx.com一样效果
 //$_CONFIG['domainMapping'] = [
