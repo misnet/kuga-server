@@ -51,7 +51,8 @@ $_CONFIG['fileStorage']['localfile'] = [
 ];
 $_CONFIG['fileStorage']['aliyun'] = [
     'configFile'=>CONFIG_DIR.'/aliyunoss/config.json',
-    'policyFile'=>CONFIG_DIR.'/aliyunoss/policy-all.txt',
+    'policyFile'=>CONFIG_DIR.'/aliyunoss/policy-all.txt'
+    //,'serverEndConfigFile'=>CONFIG_DIR.'/aliyunoss/config.serverend.json'
 ];
 
 //短信配置
@@ -71,7 +72,10 @@ $_CONFIG['cache'] = CONFIG_DIR.'/cache.json';
 //];
 //测试模式
 $_CONFIG['testmodel'] = true;
+//jwt secret key
+$_CONFIG['jwtTokenSecret'] = 'jwt token secret';
 
+$_CONFIG['apiLogEnabled'] = false;
 //调试模式，非预见性错误或程序错误时，api会显示debug信息
 $_CONFIG['debug']     = true;
 
@@ -80,4 +84,11 @@ $_CONFIG['app']['acc'] = [
     'appKey' =>1000,
     'appSecret'=>'IsuZLMPJDVnwYp8XYp/Pf4HH6e5PY28c8oQy8akF5vWxMjvvSNORdPvDu6HK9eOAGcVmDk1jLRYIkAcGu7tgUQ=='
 ];
+
+
+//是否开启记录API访问日志
+$_CONFIG['apiLogEnabled'] = false;
+
+//accessToken中用户标识的键值
+$_CONFIG['accessTokenUserIdKey'] = 'uid';
 return $_CONFIG;

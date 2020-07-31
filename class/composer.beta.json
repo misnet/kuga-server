@@ -19,7 +19,7 @@
         "anchnet/aliyun-openapi-php-sdk":"dev-master",
         "kuga/openapi-core":"0.9.",
         "kuga/qing": "dev-master",
-        "kuga/acc-api": ">=1.0.1",
+        "kuga/acc-api": "dev-beta",
         "alibabacloud/client":">=1.0.7"
     },
     "repositories": [
