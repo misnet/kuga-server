@@ -45,14 +45,6 @@
         {
             "type": "vcs",
             "url": "http://git.sdut.me/misnet/acc-api"
-        },
-        {
-            "type": "vcs",
-            "url": "http://git.sdut.me/anchnet/aliyun-openapi-php-sdk"
-        },
-        {
-            "type": "vcs",
-            "url": "http://git.sdut.me/alibabacloud/client"
         }
     ]
 }
