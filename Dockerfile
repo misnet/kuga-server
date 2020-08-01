@@ -1,7 +1,7 @@
 FROM registry.cn-shenzhen.aliyuncs.com/depoga/dphp:1.1
 WORKDIR /opt
 ARG APP_ENV=prod
-
+ARG CLEARCACHE=0
 RUN if [ ! -d /opt/var ]; then \
 mkdir /opt/var;\
 fi \
@@ -26,6 +26,9 @@ RUN if [ ${APP_ENV} = "dev" ]; then \
        yes|cp class/composer.beta.json class/composer.json; \
     fi
 RUN cd /opt/class && php /opt/class/composer.phar  global require hirak/prestissimo
+RUN if [ ${CLEARCACHE} = "1" ]; then \
+      php class/composer.phar clearcache; \
+    fi
 RUN cd /opt/class && php /opt/class/composer.phar  -vvv install
 
 ADD . .
