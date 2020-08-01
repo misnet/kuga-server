@@ -18,9 +18,9 @@
     "require": {
         "php": ">=7.0",
         "anchnet/aliyun-openapi-php-sdk":"dev-master",
-        "kuga/openapi-core":"0.9.",
-        "kuga/qing": "dev-master",
-        "kuga/acc-api": ">=1.0.1",
+        "kuga/openapi-core":"dev-master",
+        "kuga/qing": ">=0.8.7",
+        "kuga/acc-api": "dev-master",
         "alibabacloud/client":">=1.0.7"
     },
     "repositories": [

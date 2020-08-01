@@ -14,11 +14,12 @@
             "email":"dony@tapy.org"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
         "anchnet/aliyun-openapi-php-sdk":"dev-master",
-        "kuga/openapi-core":"0.9.",
-        "kuga/qing": "dev-master",
+        "kuga/openapi-core":"dev-master",
+        "kuga/qing": ">=0.8.7",
         "kuga/acc-api": "dev-beta",
         "alibabacloud/client":">=1.0.7"
     },
@@ -35,28 +36,16 @@
             "url":"https://packagist.mirrors.sjtug.sjtu.edu.cn"
         },
         {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer/"
-        }
-        {
             "type": "vcs",
-            "url": "http://git.sdut.me/misnet/kuga-openapi-core"
+            "url": "https://git.sdut.me/misnet/kuga-openapi-core"
         },
         {
             "type": "vcs",
-            "url": "http://git.sdut.me/misnet/qing"
+            "url": "https://git.sdut.me/misnet/qing"
         },
         {
             "type": "vcs",
-            "url": "http://git.sdut.me/misnet/acc-api"
-        },
-        {
-            "type": "vcs",
-            "url": "http://git.sdut.me/anchnet/aliyun-openapi-php-sdk"
-        },
-        {
-            "type": "vcs",
-            "url": "http://git.sdut.me/alibabacloud/client"
+            "url": "https://git.sdut.me/misnet/acc-api"
         }
     ]
 }
