@@ -66,6 +66,10 @@
         {
             "type": "vcs",
             "url": "https://git.sdut.me/guzzle/psr7"
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.sdut.me/aliyun/openapi-sdk-php-client"
         }
     ]
 }

@@ -17,7 +17,6 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
-        "anchnet/aliyun-openapi-php-sdk":"dev-master",
         "kuga/openapi-core":"dev-master",
         "kuga/qing": ">=0.8.7",
         "kuga/acc-api": "dev-master",
@@ -66,6 +65,11 @@
         {
             "type": "vcs",
             "url": "https://git.sdut.me/guzzle/psr7"
+        },
+        {
+            "type": "vcs",
+            "url": "https://git.sdut.me/aliyun/openapi-sdk-php-client"
         }
+
     ]
 }
