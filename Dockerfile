@@ -29,7 +29,7 @@ RUN cd /opt/class && php /opt/class/composer.phar  global require hirak/prestiss
 RUN if [ ${CLEARCACHE} = "1" ]; then \
       php class/composer.phar clearcache; \
     fi
-RUN cd /opt/class && php /opt/class/composer.phar  -vvv install
+RUN cd /opt/class && php /opt/class/composer.phar  -vvv install --no-dev --prefer-dist
 
 ADD . .
 STOPSIGNAL SIGQUIT
