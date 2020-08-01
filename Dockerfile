@@ -19,6 +19,7 @@ mkdir /opt/class;\
 fi
 RUN chmod 777 /opt/var -R
 ADD class/composer.json class/composer.json
+ADD class/composer.beta.json class/composer.beta.json
 ADD class/composer.phar class/composer.phar
 RUN cd /opt/class && php /opt/class/composer.phar  config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 RUN if [ ${APP_ENV} = "dev" ]; then \
