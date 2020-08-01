@@ -29,14 +29,6 @@ class V3Controller extends ControllerBase{
         $appModel->freshCache();
         return false;
     }
-
-    /**
-     * 清掉所有API日志
-     */
-    public function clearApiLogAction(){
-        $logService = new ApiAccessLogService($this->getDI());
-        $logService->flush();
-    }
     /**
      * API服务网关地址，这种书写方式有利于nginx的rewrite分发
      * http://api.xxx.com/v3/gateway/console.user.login
