@@ -21,8 +21,7 @@ RUN if [ ${APP_ENV} = "dev" ]; then \
        yes|cp class/composer.beta.json class/composer.json; \
     fi
 RUN cd /opt/class && php /opt/class/composer.phar  global require hirak/prestissimo
-RUN cd /opt/class && yes|php /opt/class/composer.phar  -vvv install --no-dev --no-interaction --prefer-dist
-
+RUN cd /opt/class && php /opt/class/composer.phar  -vvv install
 STOPSIGNAL SIGQUIT
 EXPOSE 9000
 CMD ["php-fpm"]

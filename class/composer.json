@@ -14,6 +14,7 @@
             "email":"dony@tapy.org"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
         "anchnet/aliyun-openapi-php-sdk":"dev-master",
@@ -36,15 +37,15 @@
         },
         {
             "type": "vcs",
-            "url": "http://git.sdut.me/misnet/kuga-openapi-core"
+            "url": "https://git.sdut.me/misnet/kuga-openapi-core"
         },
         {
             "type": "vcs",
-            "url": "http://git.sdut.me/misnet/qing"
+            "url": "https://git.sdut.me/misnet/qing"
         },
         {
             "type": "vcs",
-            "url": "http://git.sdut.me/misnet/acc-api"
+            "url": "https://git.sdut.me/misnet/acc-api"
         }
     ]
 }
