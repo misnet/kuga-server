@@ -12,7 +12,8 @@ $_CONFIG['dbwrite'] = array(
     'host'=>'localhost',
     'username'=>'root',
     'password'=>'',
-    'dbname'=>''
+    'dbname'=>'',
+    'charset'=>'utf8mb4'
 );
 $_CONFIG['dbread'] = $_CONFIG['dbwrite'];
 $_CONFIG['weixin'] = array(
