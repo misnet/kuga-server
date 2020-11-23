@@ -21,15 +21,14 @@ RUN chmod 777 /opt/var -R
 ADD class/composer.json class/composer.json
 ADD class/composer.beta.json class/composer.beta.json
 ADD class/composer.phar class/composer.phar
-ADD class/auth.json class/auth.json
+RUN cd /opt/class && php /opt/class/composer.phar self-update
+RUN cd /opt/class && php /opt/class/composer.phar  config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 RUN if [ ${APP_ENV} = "dev" ]; then \
        yes|cp class/composer.beta.json class/composer.json; \
     fi
 RUN if [ ${CLEARCACHE} = "1" ]; then \
       php class/composer.phar clearcache; \
     fi
-RUN cd /opt/class && php /opt/class/composer.phar self-update
-RUN cd /opt/class && php /opt/class/composer.phar  config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 RUN cd /opt/class && php /opt/class/composer.phar  -vvv install --no-dev --prefer-dist
 
 ADD . .

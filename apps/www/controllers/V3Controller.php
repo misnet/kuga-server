@@ -7,12 +7,12 @@
  */
 namespace Qing\Api\Controllers;
 use Kuga\Core\Api\ApiService;
-use Kuga\Core\Api\Request as KugaRequest;
-use Kuga\Core\GlobalVar;
+use Kuga\Core\Api\Request\BaseRequest as KugaRequest;
 use Kuga\Core\Service\ApiAccessLogService;
 use Kuga\Module\Acc\Model\AppModel;
 
 class V3Controller extends ControllerBase{
+
     /**
      * 清掉所有API日志
      */
@@ -53,8 +53,8 @@ class V3Controller extends ControllerBase{
             //post 表单格式时
             $requestData = $this->request->getPost();
         }
-        if(!isset($requestData['method'])){
-            $requestData['method'] = $method;
+        if(!$method && $requestData['method']){
+            $method = $requestData['method'];
         }
         $locale = $this->request->get('locale','string','zh_CN');
         if($locale=='zh'){
@@ -63,6 +63,7 @@ class V3Controller extends ControllerBase{
         $this->getDI()->getShared('translator')->setLocale(LC_MESSAGES, $locale,$this->config->system->charset);
         $requestObject = new KugaRequest($requestData);
         $requestObject->setOrigRequest($this->request);
+        $requestObject->setMethod($method);
         ApiService::setDi($this->getDI());
         ApiService::initApiJsonConfigFile(QING_ROOT_PATH.'/config/api/api.json');
         $result = ApiService::response($requestObject);

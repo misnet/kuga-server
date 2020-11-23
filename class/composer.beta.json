@@ -14,30 +14,42 @@
             "email":"dony@tapy.org"
         }
     ],
+    "minimum-stability": "dev",
     "require": {
         "php": ">=7.0",
-        "anchnet/aliyun-openapi-php-sdk":"dev-master",
         "kuga/openapi-core":"dev-master",
-        "kuga/qing": "dev-master",
+        "kuga/qing": ">=0.8.7",
         "kuga/acc-api": "dev-beta",
         "alibabacloud/client":">=1.0.7"
     },
-    "repositories": {
-        "packagist": {
+    "repositories": [
+        {
+            "packagist.org": false
+        },
+        {
             "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer"
+            "url":"https://mirrors.aliyun.com/composer/"
         },
-        "acc-api": {
+        {
             "type": "vcs",
-            "url": "https://hub.fastgit.org/misnet/acc-api.git"
+            "url": "https://hub.fastgit.org/misnet/kuga-openapi-core"
         },
-        "openapi-core": {
+        {
             "type": "vcs",
-            "url": "https://hub.fastgit.org/misnet/kuga-openapi-core.git"
+            "url": "https://hub.fastgit.org/misnet/qing"
         },
-        "qing": {
+        {
             "type": "vcs",
-            "url": "https://hub.fastgit.org/misnet/qing.git"
+            "url": "https://hub.fastgit.org/symfony/polyfill-mbstring"
+        },
+        {
+            "type": "vcs",
+            "url": "https://hub.fastgit.org/phalcon/incubator"
+        },
+        {
+            "type": "vcs",
+            "url": "https://hub.fastgit.org/guzzle/psr7"
         }
-    }
+
+    ]
 }
