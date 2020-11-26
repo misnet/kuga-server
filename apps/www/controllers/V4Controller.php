@@ -27,7 +27,7 @@ class V4Controller extends ControllerBase{
     public function gatewayAction($method=''){
         $this->response->setHeader('Access-Control-Allow-Origin', '*');
         $this->response->setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
-        $this->response->setHeader("Access-Control-Allow-Headers","Content-Type");
+        $this->response->setHeader("Access-Control-Allow-Headers","Content-Type,Access-Token-Type,Authorization,Version,Locale,Appkey");
         $this->response->setHeader('Access-Control-Allow-Credentials', 'true');
         $requestMethod = $this->request->getMethod();
         if($requestMethod!='POST' && $requestMethod!='GET'){
