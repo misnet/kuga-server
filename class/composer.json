@@ -28,43 +28,27 @@
         },
         {
             "type": "composer",
-            "url":"https://packagist.mirrors.sjtug.sjtu.edu.cn"
+            "url":"https://mirrors.aliyun.com/composer/"
         },
         {
             "type": "vcs",
-            "url": "https://git.sdut.me/misnet/kuga-openapi-core"
+            "url": "https://hub.fastgit.org/misnet/kuga-openapi-core"
         },
         {
             "type": "vcs",
-            "url": "https://git.sdut.me/misnet/qing"
+            "url": "https://hub.fastgit.org/misnet/qing"
         },
         {
             "type": "vcs",
-            "url": "https://git.sdut.me/misnet/acc-api"
+            "url": "https://hub.fastgit.org/symfony/polyfill-mbstring"
         },
         {
             "type": "vcs",
-            "url": "https://git.sdut.me/guzzle/guzzle"
+            "url": "https://hub.fastgit.org/phalcon/incubator"
         },
         {
             "type": "vcs",
-            "url": "https://git.sdut.me/symfony/polyfill-mbstring"
-        },
-        {
-            "type": "vcs",
-            "url": "https://git.sdut.me/phpoffice/phpspreadsheet"
-        },
-        {
-            "type": "vcs",
-            "url": "https://git.sdut.me/phalcon/incubator"
-        },
-        {
-            "type": "vcs",
-            "url": "https://git.sdut.me/guzzle/psr7"
-        },
-        {
-            "type": "vcs",
-            "url": "https://git.sdut.me/aliyun/openapi-sdk-php-client"
+            "url": "https://hub.fastgit.org/guzzle/psr7"
         }
 
     ]

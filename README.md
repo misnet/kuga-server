@@ -35,7 +35,7 @@ kuga-server提供API服务
 
 运行环境要求：
 - 需要PHP + MySQL 支持
-- 需要安装的PHP扩展有：Phalcon、Exif、GD
+- 需要安装的PHP扩展有：Phalcon3.4、Exif、GD、GetText
 
 
 1、目录设权限，下载项目相关类文件
@@ -125,7 +125,3 @@ $loader->register();
 
 3、API接口必须先在config/api目录里定义好，系统会从config/api中解析所有json文件，看前端调用的api接口是否有定义，
 有就可以访问，没定义就是接口不存在。有关api接口json文件的编写规范见[https://github.com/misnet/apidocs]
-
-# 规划
-- 有关后台的管理功能，将另立项目，计划采用ant design + dva（ 基于reactjs + redux）的方式
-- 完善权限管理并提供相应的API
